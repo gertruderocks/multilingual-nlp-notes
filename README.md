@@ -70,9 +70,10 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Manuscript digitization
 
 #### 🇳🇴 Norwegian
+- North Germanic language
 - Bokmål vs. Nynorsk
-- Scandinavian NLP
-- Cross-lingual transfer
+- Cross-lingual transfer with Swedish and Danish
+- Tokenization
 - Embeddings
 
 ### Old Norse
@@ -85,10 +86,12 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Comparison with modern Icelandic, Norwegian, Swedish, and Danish
 
 #### 🇸🇪 Swedish
+- North Germanic language
 - Compound words
-- Scandinavian NLP
-- Cross-lingual transfer
-- Evaluation
+- Cross-lingual transfer with Norwegian and Danish
+- Tokenization
+- Named entity recognition
+- Educational AI
   
 --
 ### Kartvelian languages 
@@ -170,18 +173,14 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - NLP resources and datasets
 
 #### 🇫🇮 Inari Sámi (Sápmi)
+- Sámi language
 - Endangered Uralic language
 - Language revitalization
 - Low-resource NLP
 - Tokenization
 - Speech technology
 - Dataset availability
-
-#### 🇫🇮 Skolt Sámi (Sápmi)
-- Endangered Uralic language
-- Unique orthography
-- Russian historical influence
-- Interesting morphology
+- AI support for Indigenous languages
 
 #### 🇱🇻 Livonian
 - Critically endangered Finnic language
@@ -191,6 +190,12 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Cross-lingual transfer
 
 #### 🇷🇺 Mari
+- Mari language
+- Low-resource NLP
+- Morphologically rich language
+- Language preservation
+- Dataset availability
+- Cross-lingual comparison
 
 #### Meänkieli (Torne Valley)
 - Finnic language
@@ -208,12 +213,29 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Cross-lingual comparison
 
 #### North Sámi (Sápmi)
+- Sámi language
+- Indigenous language technology
+- Low-resource NLP
+- Language revitalization
+- Tokenization
+- Speech technology
+- Dataset availability
+- AI support for Indigenous languages
   
 #### 🇪🇪 Seto
 - South Estonian variety (Finnic)
 - Langauge vs. dialect
 - Morphology
 - Cross-lingual transfer
+
+#### 🇫🇮 Skolt Sámi (Sápmi)
+- Sámi language
+- Endangered Uralic language
+- Unique orthography
+- Russian historical influence
+- Interesting morphology
+- Low-resource NLP
+- AI support for Indigenous languages
     
 #### 🇷🇺 Udmurt
 - Permic language
