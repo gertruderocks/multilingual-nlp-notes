@@ -76,7 +76,7 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Tokenization
 - Embeddings
 
-### Old Norse
+#### Old Norse
 - Extinct
 - Ancestor of the modern North Germanic languages
 - Runic and Latin manuscripts
