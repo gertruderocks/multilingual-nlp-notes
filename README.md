@@ -1,30 +1,42 @@
-# multilingual-benchmark-explorer
-A growing collection of notes, experiments, and references on multilingual natural language processing (NLP), language technologies, and AI evaluation.
+# Multilingual Benchmark Explorer
 
-## Why this repository?
+> Exploring how modern AI systems represent, retrieve, and transfer meaning across multilingual, low-resource, and language-contact settings.
 
-I'm fascinated by how large language models understand and generate human language across different linguistic systems.
+---
 
-This repository is my public engineering notebook: a place to learn by reading, building, experimenting, and explaining concepts in my own words.
+## Why this project?
 
-Rather than collecting isolated notes, I want to build a long-term reference that grows alongside my experience in AI engineering.
+Modern multilingual language models provide an opportunity to explore how AI represents meaning across languages that differ in morphology, available training data, writing systems, and historical relationships.
 
-## Topics
+This repository investigates multilingual embeddings, tokenization, retrieval, evaluation, and cross-lingual transfer through experiments involving both widely spoken and low-resource languages.
+
+The project emphasizes language families, language contact, and rigorous evaluation of multilingual AI systems.
+
+## Research questions
+
+- How well do multilingual models transfer across related languages?
+- How does tokenization affect morphologically rich languages?
+- How do multilingual embeddings represent language contact and lexical borrowing?
+- How can multilingual AI systems be evaluated beyond benchmark scores?
+
+---
+
+## Research themes
 
 - Tokenization
-- SentencePiece
-- Byte Pair Encoding (BPE)
-- WordPiece
 - Embeddings
-- Cross-lingual embeddings
-- Morphology
-- Low-resource languages
-- Retrieval-Augmented Generation (RAG)
-- AI evaluation and benchmarking
-- Error analysis
-- AI safety and multilingual red teaming
+- Semantic similarity
+- Cross-lingual transfer
+- Retrieval
+- Evaluation
+- Language contact
+- Lexical borrowing
+- Morphologically rich languages
+- Low-resource NLP
+- AI safety
+- Visualization
 
-## Language case studies
+## Language families
 
 This repository does not attempt to cover every language equally. Instead, it focuses on languages that illustrate interesting challenges in multilingual NLP, including morphologically rich languages, minority and Indigenous languages, endangered languages, extinct languages, low-resource languages, and languages shaped by language contact.
 
@@ -54,12 +66,16 @@ This repository does not attempt to cover every language equally. Instead, it fo
 --
 ### Germanic languages
 
+#### 🇩🇰 Danish
+
 #### 🇳🇱 Dutch
 - AI-assisted language learning
 - Dutch study agent
 - Grammar correction
 - Prompt engineering
 - Educational AI evaluation
+
+#### 🇩🇪 German
 
 #### Gothic
 - Extinct East Germanic language
@@ -100,7 +116,9 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Mkhedruli script
 - Morphology
 - NLP resources
-  
+#### 🇬🇪 Laz
+#### 🇬🇪 Mingrelian
+#### 🇬🇪 Svan  
 --
 ### Slavic languages
 
@@ -120,6 +138,8 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Diachronic NLP
 - Comparison with modern Slavic languages
 
+#### 🇺🇦 Ukrainian
+
 --
 ### Turkic languages
 
@@ -132,6 +152,8 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Script variation between Latin-script North Azerbaijani and Perso-Arabic-script South Azerbaijani
 - Dialect and regional variation
 
+#### 🇷🇺 Tatar
+
 #### 🇹🇷 Turkish
 - Agglutinative morphology
 - Tokenization
@@ -141,20 +163,8 @@ This repository does not attempt to cover every language equally. Instead, it fo
 --
 ### Uralic languages
 
-#### 🇪🇪 Estonian
-- Finnic language
-- Morphologically rich language
-- Finno-Ugric language comparison
-- Tokenization
-- Embedding quality
+### Primary focus
 
-#### 🇷🇺 Erzya
-- Mordvinic language
-- Low-resource NLP
-- Morphology
-- Uralic comparison
-- Dataset availability 
-  
 #### 🇫🇮 Finnish
 - Finnic language
 - Morphologically rich language
@@ -164,55 +174,25 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Retrieval and search
 - AI evaluation
 
-#### 🇭🇺 Hungarian
-- Ugric language
-- Agglutinative morphology
-- Rich case system
-- Tokenization
-- Uralic comparison
-- NLP resources and datasets
-
-#### 🇫🇮 Inari Sámi (Sápmi)
-- Sámi language
-- Endangered Uralic language
-- Language revitalization
-- Low-resource NLP
-- Tokenization
-- Speech technology
-- Dataset availability
-- AI support for Indigenous languages
-
-#### 🇱🇻 Livonian
-- Critically endangered Finnic language
-- Language revitalization
-- Extremely low-resource NLP
-- Tokenization with limited corpora
-- Cross-lingual transfer
-
-#### 🇷🇺 Mari
-- Mari language
-- Low-resource NLP
-- Morphologically rich language
-- Language preservation
-- Dataset availability
-- Cross-lingual comparison
-
-#### Meänkieli (Torne Valley)
+#### 🇫🇮 Karelian
+- Finnic language
+  
+#### 🇸🇪 Meänkieli (Torne Valley)
 - Finnic language
 - Minority language technology
 - Finnish vs Meänkieli comparison
 - Language variation
 - Cross-lingual embeddings
 - Low-resource NLP
-  
-#### 🇷🇺 Moksha
-- Mordvinic language
-- Low-resource NLP
-- Morphology
-- Language preservation
-- Cross-lingual comparison
 
-#### North Sámi (Sápmi)
+#### 🇪🇪 Estonian
+- Finnic language
+- Morphologically rich language
+- Finno-Ugric language comparison
+- Tokenization
+- Embedding quality
+
+#### 🇳🇴 North Sámi (Sápmi)
 - Sámi language
 - Indigenous language technology
 - Low-resource NLP
@@ -221,25 +201,20 @@ This repository does not attempt to cover every language equally. Instead, it fo
 - Speech technology
 - Dataset availability
 - AI support for Indigenous languages
-  
-#### 🇪🇪 Seto
-- South Estonian variety (Finnic)
-- Langauge vs. dialect
-- Morphology
-- Cross-lingual transfer
 
-#### 🇫🇮 Skolt Sámi (Sápmi)
-- Sámi language
-- Endangered Uralic language
-- Unique orthography
-- Russian historical influence
-- Interesting morphology
-- Low-resource NLP
-- AI support for Indigenous languages
-    
-#### 🇷🇺 Udmurt
-- Permic language
-- Morphologically rich
-- Low-resource NLP
-- Language preservation
-- Cross-lingual comparison
+### Additional interests
+
+- Livonian
+- Veps
+- Votic
+- Seto
+- Skolt Sámi (Sápmi)
+- Inari Sámi (Sápmi)
+- Mari
+- Erzya
+- Moksha
+- Komi
+- Udmurt
+- Khanty
+- Mansi
+- Nenets
