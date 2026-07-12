@@ -1,4 +1,4 @@
-# multilingual-nlp-notes
+# multilingual-benchmark-explorer
 A growing collection of notes, experiments, and references on multilingual natural language processing (NLP), language technologies, and AI evaluation.
 
 ## Why this repository?
