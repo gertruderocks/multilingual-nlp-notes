@@ -1,220 +1,206 @@
 # Multilingual Benchmark Explorer
 
-> Exploring how multilingual AI models represent and transfer meaning across language families, low-resource languages, and language contact zones.
+> Exploring how multilingual AI systems represent, retrieve, evaluate, and transfer meaning across language families, language contact zones, Indigenous languages, and low-resource communities.
 
 ---
 
 ## Why this project?
 
-Modern multilingual language models provide an opportunity to explore how AI represents meaning across languages that differ in morphology, available training data, writing systems, and historical relationships.
+Modern AI systems must work across languages that differ in morphology, writing systems, available training data, historical relationships, and cultural context.
 
-This repository investigates multilingual embeddings, tokenization, retrieval, evaluation, and cross-lingual transfer through experiments involving both widely spoken and low-resource languages.
+This repository explores multilingual AI through practical experiments in tokenization, embeddings, retrieval, Retrieval-Augmented Generation (RAG), evaluation, and multilingual NLP.
 
-The project emphasizes language families, language contact, and rigorous evaluation of multilingual AI systems.
+Rather than focusing on a single language or model, the project investigates how modern AI systems perform across language families, low-resource languages, language contact zones, and Indigenous language settings.
 
-## Research questions
-
-- How well do multilingual models transfer across related languages?
-- How does tokenization affect morphologically rich languages?
-- How do multilingual embeddings represent language contact and lexical borrowing?
-- How can multilingual AI systems be evaluated beyond benchmark scores?
+The goal is to build a deeper understanding of multilingual AI while developing practical engineering skills relevant to modern AI systems.
 
 ---
 
-## Research themes
+## Research questions
+
+- How well do multilingual AI systems transfer across related languages?
+- How do morphology and writing systems influence tokenization and embeddings?
+- How does language contact influence multilingual retrieval?
+- How should multilingual AI systems be evaluated beyond benchmark scores?
+- Which multilingual architectures best support low-resource and Indigenous languages?
+- How can comparative multilingual experiments improve our understanding of modern AI systems?
+
+---
+
+## Core topics
 
 - Tokenization
 - Embeddings
-- Semantic similarity
-- Cross-lingual transfer
-- Retrieval
+- Morphology
+- Information Retrieval
+- Retrieval-Augmented Generation (RAG)
 - Evaluation
-- Language contact
-- Lexical borrowing
-- Morphologically rich languages
-- Low-resource NLP
-- AI safety
-- Visualization
+- Multilingual NLP
+- Semantic Search
+- Cross-lingual Transfer
+- AI Safety
+- Vector Databases
+- Benchmark Design
+
+---
 
 ## Language families
 
-This repository does not attempt to cover every language equally. Instead, it focuses on languages that illustrate interesting challenges in multilingual NLP, including morphologically rich languages, minority and Indigenous languages, endangered languages, extinct languages, low-resource languages, and languages shaped by language contact.
+This repository focuses on language pairs that illustrate meaningful AI engineering challenges rather than attempting to cover every language equally.
 
-### Baltic languages
+### Uralic
 
-#### 🇱🇻 Latvian
-- Baltic language NLP
-- Tokenization
-- Low-resource language support
-- Multilingual benchmarks
+**Primary research languages**
 
-#### 🇱🇹 Lithuanian
-- Baltic language NLP
-- Rich inflectional morphology
-- Tokenization
-- Morphological analysis
-- Cross-lingual comparison with Latvian
+- 🇫🇮 Finnish
+- 🇪🇪 Estonian
+- 🇫🇮 Karelian
+- 🇸🇪 Meänkieli
+- 🦌 North Sámi
 
-#### Old Prussian
-- Extinct Western Baltic language
-- Historical linguistics
-- Language reconstruction
-- OCR of historical documents
-- Digitization of manuscripts
-- NLP for historical texts
-  
---
-### Germanic languages
+### Germanic
 
-#### 🇩🇰 Danish
+**Primary research languages**
 
-#### 🇳🇱 Dutch
-- AI-assisted language learning
-- Dutch study agent
-- Grammar correction
-- Prompt engineering
-- Educational AI evaluation
+- 🇳🇱 Dutch
+- 🇩🇪 German
+- 🇸🇪 Swedish
+- 🇳🇴 Norwegian
 
-#### 🇩🇪 German
+### Slavic
 
-#### Gothic
-- Extinct East Germanic language
-- Historical linguistics
-- Limited corpora
-- Language reconstruction
-- Historical embeddings
-- Manuscript digitization
+**Primary research languages**
 
-#### 🇳🇴 Norwegian
-- North Germanic language
-- Bokmål vs. Nynorsk
-- Cross-lingual transfer with Swedish and Danish
+- 🇷🇺 Russian
+- 🇺🇦 Ukrainian
+
+### Turkic
+
+**Primary research languages**
+
+- 🇹🇷 Turkish
+- 🇦🇿 Azerbaijani
+- 🇷🇺 Tatar
+
+### Kartvelian
+
+**Primary research language**
+
+- 🇬🇪 Georgian
+
+### Additional language families
+
+Examples throughout the repository also include:
+
+- 🇦🇲 Armenian
+- 🇮🇷 Persian (Farsi)
+- 🇦🇫 Dari
+- 🇹🇯 Tajik
+- 🇱🇻 Latvian
+- 🇱🇹 Lithuanian
+- ייִדיש Yiddish
+- Hebrew
+- Arabic
+- Lezgin
+- Chechen
+
+Additional low-resource, endangered, and historical languages will be incorporated as the project evolves.
+
+---
+
+## Comparative methodology
+
+This repository explores multilingual AI through carefully selected language comparisons.
+
+Rather than comparing languages at random, each comparison is designed to investigate a specific AI engineering question.
+
+Examples include:
+
+| Comparison | Why it matters |
+|------------|----------------|
+| 🇫🇮 Finnish ↔ 🇷🇺 Russian | Neighboring countries, different language families, different writing systems, morphology, centuries of language contact |
+| 🇫🇮 Finnish ↔ 🇪🇪 Estonian | Closely related Finnic languages |
+| 🇫🇮 Finnish ↔ 🇫🇮 Karelian | Low-resource language comparison |
+| 🇫🇮 Finnish ↔ 🇸🇪 Meänkieli | Minority language and language contact |
+| 🦌 North Sámi ↔ 🇳🇴 Norwegian | Indigenous language support and multilingual public services |
+| 🇳🇱 Dutch ↔ 🇩🇪 German | Closely related Germanic languages |
+| 🇷🇺 Russian ↔ 🇺🇦 Ukrainian | Closely related Slavic languages |
+| 🇷🇺 Russian ↔ 🇪🇪 Estonian | Language contact across Slavic and Uralic languages |
+| 🇩🇪 German ↔ 🇪🇪 Estonian | Historical language contact in the Baltic region |
+| 🇷🇺 Russian ↔ 🇱🇻 Latvian | Multilingual societies and language policy |
+| 🇷🇺 Russian ↔ 🇦🇿 Azerbaijani | Regional multilingualism in the Caucasus |
+| 🇮🇷 Persian ↔ 🇦🇿 Azerbaijani | Cross-border multilingual communities |
+| 🇬🇪 Georgian ↔ 🇦🇲 Armenian | Neighboring language families |
+| 🇷🇺 Russian ↔ 🇬🇪 Georgian | Historical interaction across neighboring language families |
+| 🇦🇿 Azerbaijani ↔ Lezgin | Minority languages and language contact |
+
+---
+
+## Repository roadmap
+
+### Core concepts
+
 - Tokenization
 - Embeddings
-
-#### Old Norse
-- Extinct
-- Ancestor of the modern North Germanic languages
-- Runic and Latin manuscripts
-- Historical NLP
-- OCR
-- Named entity recognition
-- Comparison with modern Icelandic, Norwegian, Swedish, and Danish
-
-#### 🇸🇪 Swedish
-- North Germanic language
-- Compound words
-- Cross-lingual transfer with Norwegian and Danish
-- Tokenization
-- Named entity recognition
-- Educational AI
-  
---
-### Kartvelian languages 
-
-#### 🇬🇪 Georgian
-- Mkhedruli script
 - Morphology
-- NLP resources
-#### 🇬🇪 Laz
-#### 🇬🇪 Mingrelian
-#### 🇬🇪 Svan  
---
-### Slavic languages
+- Retrieval
+- Retrieval-Augmented Generation (RAG)
+- Evaluation
 
-#### 🇷🇺 Russian
-- East Slavic language
-- Cyrillic script
-- Rich inflectional morphology
-- Tokenization
-- Multilingual embeddings
-- Cross-lingual retrieval
+### Engineering topics
 
-#### Old Church Slavonic
-- Earliest literary Slavic language
-- Historical corpora
-- OCR of manuscripts
-- Historical language modeling
-- Diachronic NLP
-- Comparison with modern Slavic languages
+- Vector Databases
+- Hybrid Search
+- Semantic Search
+- Reranking
+- AI Evaluation
+- Observability
+- AI Safety
 
-#### 🇺🇦 Ukrainian
+### Comparative methodology
 
---
-### Turkic languages
-
-#### 🇦🇿 Azerbaijani
-- Agglutinative morphology
-- Cross-lingual transfer with Turkish
-- Tokenization and multilingual embeddings
-- Russian loanwords in the variety spoken in the Republic of Azerbaijan
-- Persian and Arabic lexical influence
-- Script variation between Latin-script North Azerbaijani and Perso-Arabic-script South Azerbaijani
-- Dialect and regional variation
-
-#### 🇷🇺 Tatar
-
-#### 🇹🇷 Turkish
-- Agglutinative morphology
-- Tokenization
-- Cross-lingual transfer with Azerbaijani
-- Embeddings
-
---
-### Uralic languages
-
-### Primary focus
-
-#### 🇫🇮 Finnish
-- Finnic language
-- Morphologically rich language
-- Tokenization experiments
-- BPE vs. SentencePiece
-- Embeddings
-- Retrieval and search
-- AI evaluation
-
-#### 🇫🇮 Karelian
-- Finnic language
-  
-#### 🇸🇪 Meänkieli (Torne Valley)
-- Finnic language
-- Minority language technology
-- Finnish vs Meänkieli comparison
-- Language variation
-- Cross-lingual embeddings
+- Related languages
+- Language contact
+- Indigenous languages
+- Endangered languages
 - Low-resource NLP
+- Morphological complexity
+- Writing systems
+- Cross-lingual transfer
 
-#### 🇪🇪 Estonian
-- Finnic language
-- Morphologically rich language
-- Finno-Ugric language comparison
-- Tokenization
-- Embedding quality
+### Future work
 
-#### 🇳🇴 North Sámi (Sápmi)
-- Sámi language
-- Indigenous language technology
-- Low-resource NLP
-- Language revitalization
-- Tokenization
-- Speech technology
-- Dataset availability
-- AI support for Indigenous languages
+- Interactive visualizations
+- Comparative multilingual experiments
+- Engineering case studies
+- Benchmark implementations
+- Technical blog posts
 
-### Additional interests
+---
 
-- Livonian
-- Veps
-- Votic
-- Seto
-- Skolt Sámi (Sápmi)
-- Inari Sámi (Sápmi)
-- Mari
-- Erzya
-- Moksha
-- Komi
-- Udmurt
-- Khanty
-- Mansi
-- Nenets
+## Repository structure
+
+```text
+docs/
+    comparative-methodology.md
+    tokenization.md
+    embeddings.md
+    morphology.md
+    retrieval.md
+    retrieval-augmented-generation.md
+    evaluation.md
+
+experiments/
+
+blog/
+
+visualizations/
+```
+
+---
+
+## Long-term vision
+
+This repository documents my exploration of multilingual AI engineering through practical experiments, comparative evaluation, and modern AI system design.
+
+The long-term goal is to better understand how AI systems represent, retrieve, and evaluate meaning across languages while building practical engineering experience with production-oriented multilingual AI systems.
