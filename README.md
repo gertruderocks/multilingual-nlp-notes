@@ -1,6 +1,6 @@
 # Multilingual Benchmark Explorer
 
-> Exploring how modern AI systems represent, retrieve, and transfer meaning across multilingual, low-resource, and language-contact settings.
+> Exploring how multilingual AI models represent and transfer meaning across language families, low-resource languages, and language contact zones.
 
 ---
 
