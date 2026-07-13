@@ -48,10 +48,12 @@ Research themes:
 
 ## National minority languages
 
+National minority and protected minority languages
+
 Examples include:
 
-- Meänkieli
-- Yiddish
+- Meänkieli (Sweden)
+- Yiddish (recognized in several European countries)
 
 Research themes:
 
