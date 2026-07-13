@@ -1,99 +1,97 @@
 # Language Contact
 
-Language families explain historical relationships between languages.
+Language families describe languages that share a common historical ancestry.
 
-Language contact explains how languages influence one another through interaction.
+Language contact describes how languages influence one another through long-term interaction.
 
-For multilingual AI systems, both perspectives matter.
+For multilingual AI engineering, both perspectives are important.
 
-Languages that are genetically unrelated may share vocabulary, writing systems, discourse patterns, or semantic concepts because of centuries of contact. These relationships may influence tokenization, multilingual embeddings, retrieval, translation, and evaluation.
+Languages from different language families may nevertheless share vocabulary, writing systems, semantic concepts, discourse patterns, or parallel resources because of centuries of contact. Likewise, languages within the same language family may diverge through different historical, political, and cultural experiences.
 
-This repository treats language contact as an important dimension of multilingual AI alongside language families, morphology, writing systems, and resource availability.
+The Multilingual Benchmark Explorer treats language contact as an important dimension of multilingual AI alongside language families, morphology, writing systems, and resource availability.
 
 ---
 
-# Why language contact matters for AI
+# Why language contact matters
 
 Language contact may influence:
 
 - borrowed vocabulary
-- named entities
 - multilingual embeddings
 - semantic similarity
-- retrieval performance
+- tokenization
+- information retrieval
 - machine translation
 - multilingual evaluation
+- cross-lingual transfer
 
-Two unrelated languages may behave more similarly than expected because of long periods of cultural or linguistic interaction.
-
-Conversely, closely related languages may diverge because of different historical influences.
-
----
-
-# Language family versus language contact
-
-These concepts describe different relationships.
-
-| Language family | Language contact |
-|-----------------|------------------|
-| Historical ancestry | Historical interaction |
-| Shared origin | Shared influence |
-| Genetic relationship | Cultural and linguistic exchange |
-| Usually stable | Changes over time |
-
-Both perspectives are valuable when designing multilingual AI experiments.
+These effects may occur even when two languages belong to different language families.
 
 ---
 
-# Examples
+# Language family relationships versus language contact
 
-## Finnish ↔ Swedish
+These concepts describe different kinds of relationships.
 
-- centuries of bilingualism
-- administrative vocabulary
-- educational terminology
-- loanwords
-- public services
+| Language family relationships | Language contact |
+|-------------------------------|------------------|
+| Shared historical ancestry | Historical interaction |
+| Common linguistic origin | Cultural and linguistic exchange |
+| Languages within the same language family | Languages from different or related language families |
+| Usually stable over long periods | Evolves through historical interaction |
 
-Research questions
-
-- Does historical borrowing influence multilingual embeddings?
-- Can multilingual retrieval benefit from shared vocabulary?
+Both perspectives provide useful variables when designing multilingual AI experiments.
 
 ---
+
+# Language contact case studies
 
 ## Finnish ↔ Russian
 
-- geographic neighbors
-- centuries of interaction
-- historical borrowing
-- multilingual communities
+Research themes:
 
-Research questions
+- neighboring countries
+- bilingual communities
+- lexical borrowing
+- multilingual retrieval
+- cross-border communication
 
-- How does language contact influence cross-lingual retrieval?
-- Does proximity improve multilingual representations?
+Potential investigations:
+
+- multilingual embeddings
+- semantic retrieval
+- translation quality
 
 ---
 
 ## Estonian ↔ German
 
-German-speaking Lutheran clergy played a major role in the development and standardization of written Estonian beginning in the sixteenth century.
+German-speaking Lutheran clergy played an important role in the development and standardization of written Estonian beginning in the sixteenth century.
 
-Research questions
+Research themes:
 
-- Does historical orthographic influence affect multilingual tokenization?
-- How does lexical borrowing appear in embedding space?
+- orthographic development
+- historical borrowing
+- multilingual embeddings
+- language technology
+
+Potential investigations:
+
+- tokenization
+- lexical borrowing
+- embedding alignment
 
 ---
 
 ## Estonian ↔ Russian
 
+Research themes:
+
 - multilingual society
 - historical language policy
-- cross-border communication
+- bilingual communication
 
-Potential investigations
+Potential investigations:
 
 - retrieval
 - translation
@@ -103,50 +101,64 @@ Potential investigations
 
 ## Meänkieli ↔ Swedish
 
-- minority language
+Although Meänkieli belongs to the Finnic branch of the Uralic language family, it has developed for centuries in close contact with Swedish.
+
+Research themes:
+
 - bilingual communities
-- education
+- lexical borrowing
 - public administration
+- education
 
-Research questions
+Potential investigations:
 
-- How do multilingual models represent mixed linguistic environments?
-- Does bilingual exposure improve multilingual transfer?
+- multilingual retrieval
+- multilingual embeddings
+- tokenization of borrowed vocabulary
 
 ---
 
 ## North Sámi ↔ Norwegian
 
-- Indigenous language
+Research themes:
+
+- Indigenous language technologies
 - multilingual public services
 - language revitalization
 
-Research questions
+Potential investigations:
 
-- How do multilingual systems support Indigenous languages?
-- How should evaluation account for language revitalization?
+- retrieval
+- translation
+- evaluation for Indigenous languages
 
 ---
 
 ## Azerbaijani ↔ Persian
 
-- long-term regional interaction
-- bilingual communities
-- shared cultural vocabulary
+Research themes:
 
-Research questions
+- cross-border multilingual communities
+- historical interaction
+- lexical borrowing
 
-- How much lexical borrowing is reflected in multilingual embeddings?
+Potential investigations:
+
+- multilingual embeddings
+- semantic similarity
+- multilingual retrieval
 
 ---
 
 ## Azerbaijani ↔ Russian
 
-- multilingual administration
-- education
+Research themes:
+
+- multilingual education
+- administration
 - historical language policy
 
-Potential investigations
+Potential investigations:
 
 - retrieval
 - translation
@@ -154,42 +166,71 @@ Potential investigations
 
 ---
 
+## Erzya ↔ Russian
+
+Erzya and Russian belong to different language families but have experienced extensive historical contact.
+
+Research themes:
+
+- bilingual communities
+- parallel corpora
+- multilingual education
+- shared writing system (Cyrillic)
+
+Potential investigations:
+
+- multilingual transfer
+- retrieval
+- translation
+- tokenizer behavior across Cyrillic languages
+
+---
+
 ## Georgian ↔ Armenian
 
-Neighboring language families with centuries of cultural interaction.
+Research themes:
 
-Research questions
+- neighboring language families
+- historical interaction
+- multilingual communities
 
-- How do multilingual models represent neighboring but unrelated languages?
+Potential investigations:
+
+- multilingual retrieval
+- semantic similarity
+- multilingual evaluation
 
 ---
 
 # Engineering implications
 
-Language contact provides opportunities to design richer multilingual benchmarks.
+Language contact introduces variables that complement language family relationships when designing multilingual AI experiments.
 
-Potential variables include:
+Examples include:
 
-- neighboring versus distant languages
+- neighboring versus geographically distant languages
 - shared writing systems
 - borrowed vocabulary
-- multilingual communities
+- bilingual communities
 - language policy
-- bilingual education
-- historical orthographic influence
+- multilingual education
+- orthographic influence
+- parallel corpora
 
-These variables complement traditional comparisons based on language families.
+These variables may influence multilingual embeddings, retrieval, translation, and evaluation.
 
 ---
 
 # Future experiments
 
-- Compare embeddings for neighboring languages with extensive historical contact.
-- Measure retrieval performance across language contact zones.
-- Investigate lexical borrowing using embedding neighborhoods.
-- Compare translation quality for related versus unrelated neighboring languages.
-- Study tokenization behavior for borrowed words.
-- Visualize multilingual embedding spaces across language contact zones.
+Potential investigations include:
+
+- Compare multilingual embeddings across language contact zones.
+- Measure retrieval performance for neighboring languages.
+- Investigate lexical borrowing through embedding neighborhoods.
+- Compare translation quality for languages within the same language family versus languages connected through long-term language contact.
+- Study tokenizer behavior for borrowed vocabulary.
+- Visualize multilingual embedding spaces across language contact networks.
 
 ---
 
@@ -197,24 +238,12 @@ These variables complement traditional comparisons based on language families.
 
 Related documentation:
 
-- `comparative-methodology.md`
 - `language-families.md`
+- `comparative-methodology.md`
+- `low-resource-languages.md`
 - `tokenization.md`
 - `embeddings.md`
 - `retrieval.md`
 - `evaluation.md`
-- `low-resource-languages.md`
 
-Related language profiles:
-
-- Finnish
-- Estonian
-- Meänkieli
-- North Sámi
-- Russian
-- Swedish
-- Norwegian
-- Azerbaijani
-- Persian
-- Georgian
-- Armenian
+Language contact complements, rather than replaces, language family relationships as a framework for understanding multilingual AI systems.

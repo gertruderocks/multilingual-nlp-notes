@@ -1,317 +1,222 @@
 # Comparative Methodology
 
-## Purpose
+The Multilingual Benchmark Explorer investigates multilingual AI through carefully designed comparative experiments.
 
-The goal of this repository is not to compare languages for their own sake.
+Rather than comparing languages at random, each comparison is selected to isolate one or more variables that influence multilingual AI systems.
 
-Instead, it uses carefully selected language comparisons to investigate engineering questions about modern multilingual AI systems.
-
-Every language, language pair, and experiment included in this repository should help answer a meaningful question about tokenization, embeddings, retrieval, Retrieval-Augmented Generation (RAG), evaluation, or multilingual reasoning.
-
-This document describes the principles used to design those comparisons.
+The goal is not simply to compare languages, but to better understand how linguistic, historical, and computational factors affect tokenization, embeddings, retrieval, evaluation, and cross-lingual transfer.
 
 ---
 
 # Guiding principles
 
-## AI systems first
+Comparisons should:
 
-This repository is organized around modern AI systems rather than individual languages.
-
-Topics include:
-
-- Tokenization
-- Embeddings
-- Retrieval
-- Retrieval-Augmented Generation (RAG)
-- Prompt engineering
-- Evaluation
-- Multilingual large language models
-
-Languages serve as engineering test cases rather than ends in themselves.
+- investigate meaningful AI engineering questions
+- isolate one or more linguistic or computational variables
+- be reproducible
+- encourage qualitative and quantitative evaluation
+- improve understanding of multilingual AI systems
 
 ---
 
-## Every language should earn its place
+# Dimensions of comparison
 
-Languages are selected because they illustrate important engineering challenges.
+The repository organizes multilingual comparisons across several complementary dimensions.
+
+## Language family relationships
+
+Languages within the same language family often share historical ancestry and structural similarities.
 
 Examples include:
 
-- Morphological complexity
-- Writing systems
-- Language contact
-- Low-resource NLP
-- Indigenous language support
-- Cross-lingual transfer
-- Semantic retrieval
-
-The repository does not attempt to cover every language equally.
-
----
-
-## Every comparison should answer an engineering question
-
-Rather than asking:
-
-> How are these languages similar?
-
-the repository asks questions such as:
-
-- How does morphology influence tokenization?
-- How do writing systems affect embeddings?
-- How does language contact influence retrieval?
-- Which language pairs best reveal strengths and weaknesses in multilingual AI systems?
-- How should multilingual AI systems support Indigenous and endangered languages?
-
----
-
-## Engineering over memorization
-
-The objective is not to memorize benchmark scores or model names.
-
-Instead, the goal is to understand:
-
-- Why systems behave the way they do
-- Which engineering decisions matter
-- Which tradeoffs influence performance
-- How AI systems can be evaluated fairly
-
----
-
-# Comparison taxonomy
-
-Language comparisons are grouped according to the engineering questions they investigate.
-
-## Closely related languages
-
-Purpose:
-
-Investigate cross-lingual transfer and shared linguistic structure.
-
-Examples:
-
 - Finnish ↔ Estonian
-- Finnish ↔ Karelian
+- Finnish ↔ Meänkieli
+- Dutch ↔ German
 - Russian ↔ Ukrainian
 - Turkish ↔ Azerbaijani
-- Dutch ↔ German
 
-Engineering questions:
+Research questions:
 
-- Does language relatedness improve multilingual transfer?
-- How transferable are embeddings?
-- How should multilingual evaluation account for related languages?
-
----
-
-## Closely related low-resource languages
-
-Purpose:
-
-Investigate multilingual transfer in languages with limited training resources.
-
-Examples:
-
-- North Sámi ↔ Inari Sámi
-- North Sámi ↔ Skolt Sámi
-
-Engineering questions:
-
-- Can multilingual models transfer knowledge between closely related low-resource languages?
-- Which embedding models perform best?
+- How well do multilingual models transfer within the same language family?
+- How similar are multilingual embeddings?
+- Does tokenizer behavior differ?
+- How much vocabulary is shared?
 
 ---
 
 ## Language contact
 
-Purpose:
+Languages may influence one another through long-term historical interaction, even when they belong to different language families.
 
-Investigate the effects of historical interaction between neighboring languages.
-
-Examples:
+Examples include:
 
 - Finnish ↔ Russian
-- Russian ↔ Estonian
-- Russian ↔ Latvian
-- German ↔ Estonian
-- Finnish ↔ Meänkieli
+- Estonian ↔ German
+- Estonian ↔ Russian
+- Meänkieli ↔ Swedish
+- Erzya ↔ Russian
+- Azerbaijani ↔ Persian
 
-Engineering questions:
+Research questions:
 
 - Does language contact improve multilingual retrieval?
-- How do multilingual embeddings represent lexical borrowing?
+- Can multilingual models exploit borrowed vocabulary?
+- Does historical interaction influence embeddings?
 
 ---
 
-## Cross-border multilingualism
+## Resource availability
 
-Purpose:
+Comparisons across different levels of digital resource availability help evaluate multilingual robustness.
 
-Study multilingual communities that span political borders.
+Examples include:
 
-Examples:
+- Finnish ↔ Livonian
+- Finnish ↔ Karelian
+- Russian ↔ Erzya
+- Norwegian ↔ North Sámi
 
-- Persian ↔ Azerbaijani
-- Russian ↔ Azerbaijani
+Research questions:
 
-Engineering questions:
-
-- How should multilingual AI support bilingual users?
-- How does multilingual retrieval perform across neighboring countries?
-
----
-
-## Minority language support
-
-Purpose:
-
-Evaluate multilingual AI systems for minority languages.
-
-Examples:
-
-- Azerbaijani ↔ Lezgin
-- Finnish ↔ Meänkieli
-
-Engineering questions:
-
-- How well do multilingual models support minority language communities?
-- How should evaluation account for limited resources?
-
----
-
-## Indigenous language deployment
-
-Purpose:
-
-Investigate multilingual AI in real-world Indigenous language settings.
-
-Examples:
-
-- North Sámi ↔ Norwegian
-
-Engineering questions:
-
-- How should multilingual AI systems support communication between Indigenous and national languages?
-- How should multilingual retrieval support public services?
-- How should RAG support multilingual government documentation?
-
----
-
-## Writing systems
-
-Purpose:
-
-Investigate multilingual AI across different scripts.
-
-Examples:
-
-- Finnish ↔ Russian
-- Russian ↔ Georgian
-- Georgian ↔ Armenian
-
-Engineering questions:
-
-- How do writing systems influence tokenization?
-- How do scripts influence multilingual embeddings?
-- How does script affect retrieval?
+- Can higher-resource languages improve performance for lower-resource languages?
+- Which multilingual models transfer knowledge most effectively?
+- How does performance change as available resources decrease?
 
 ---
 
 ## Morphological complexity
 
-Purpose:
+Languages differ significantly in how they express grammatical information.
 
-Investigate how word formation influences AI systems.
-
-Examples:
+Examples include:
 
 - Finnish
 - Estonian
+- Erzya
 - Turkish
-- Azerbaijani
-- Russian
+- Hungarian
 
-Engineering questions:
+Research questions:
 
 - How does morphology influence tokenization?
-- How does morphology influence retrieval?
-- Which models perform best on morphologically rich languages?
+- Which embedding models best preserve morphological information?
+- How robust are multilingual tokenizers?
 
 ---
 
-## Low-resource NLP
+## Writing systems
 
-Purpose:
+Writing systems introduce additional multilingual engineering challenges.
 
-Evaluate multilingual AI beyond high-resource languages.
+Examples include:
 
-Examples:
+- Latin
+- Cyrillic
+- Georgian
+- Arabic
 
-- Karelian
-- Meänkieli
-- North Sámi
-- Inari Sámi
-- Skolt Sámi
-- Lezgin
+Research questions:
 
-Engineering questions:
-
-- Which multilingual models generalize best?
-- How should low-resource languages be evaluated?
-- What benchmarks are appropriate?
+- How does script influence multilingual retrieval?
+- How does tokenizer performance vary?
+- Do embeddings behave differently across scripts?
 
 ---
 
-# Designing experiments
+# Comparative experiments
 
-Every experiment in this repository should begin with a clear engineering question.
+Each experiment should clearly identify:
 
-Recommended workflow:
-
-1. Engineering question
-2. Hypothesis
-3. Language selection
-4. Model selection
-5. Dataset
-6. Implementation
-7. Evaluation
-8. Analysis
-9. Limitations
-10. Future work
+- languages being compared
+- research question
+- variables being investigated
+- datasets
+- models
+- evaluation metrics
+- expected observations
 
 ---
 
-# Engineering principles
+# Example comparison template
 
-This repository follows several core engineering principles.
+```text
+Comparison
 
-## Systems thinking
+Research question
 
-Modern AI systems should be understood as interconnected components rather than isolated technologies.
+Languages
 
-## Comparative evaluation
+Variables
 
-Language comparisons should answer meaningful engineering questions rather than simply comparing linguistic features.
+Dataset(s)
 
-## Reproducibility
+Model(s)
 
-Experiments should be well documented, repeatable, and easy for others to extend.
+Evaluation metrics
 
-## Engineering tradeoffs
+Results
 
-Engineering decisions involve balancing competing priorities. Understanding tradeoffs is often more valuable than memorizing architectures, models, or benchmark scores.
+Observations
 
-## Continuous improvement
-
-This repository is intended to evolve over time as new experiments are completed, new models become available, and the field of multilingual AI continues to advance.
+Future work
+```
 
 ---
 
-# Long-term vision
+# Evaluation
 
-This repository aims to become a practical framework for exploring how modern AI systems represent, retrieve, evaluate, and transfer meaning across languages.
+Comparative experiments should combine both quantitative and qualitative evaluation.
 
-The emphasis is on building production-oriented engineering knowledge through careful experimentation, rigorous evaluation, and clear technical documentation.
+Possible quantitative metrics include:
 
-The long-term goal is to better understand multilingual AI systems while contributing practical, reproducible experiments that others can learn from and build upon.
+- Recall@K
+- Mean Reciprocal Rank (MRR)
+- nDCG
+- Precision
+- Recall
+- F1
+- cosine similarity
+- BLEU
+- COMET
+- BERTScore
+
+Qualitative evaluation may include:
+
+- nearest-neighbor inspection
+- embedding visualization
+- tokenization analysis
+- retrieval examples
+- translation examples
+- error analysis
+
+---
+
+# Future directions
+
+Potential future investigations include:
+
+- multilingual embedding alignment
+- multilingual retrieval
+- multilingual RAG
+- tokenizer comparison
+- language contact and multilingual AI
+- evaluation of Indigenous languages
+- evaluation of national minority languages
+- benchmark design for lower-resource languages
+
+---
+
+# Repository connections
+
+Related documentation:
+
+- `language-families.md`
+- `language-contact.md`
+- `low-resource-languages.md`
+- `evaluation.md`
+- `tokenization.md`
+- `embeddings.md`
+- `retrieval.md`
+
+This document defines *how* multilingual comparisons are designed. Individual language profiles and experiments apply these principles to specific languages and AI engineering questions.

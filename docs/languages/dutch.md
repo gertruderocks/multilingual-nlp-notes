@@ -191,3 +191,23 @@ Future bibliography
 - Build and evaluate the Dutch Study Agent.
 - Evaluate multilingual retrieval performance.
 - Compare multilingual LLM reasoning across West Germanic languages.
+
+## Related language pages
+
+### Closely related
+
+- English
+- German
+- Swedish
+- Norwegian
+
+### Useful comparisons
+
+- Finnish (contrasting morphology)
+- Russian (contrasting language family and script)
+- Turkish (contrasting agglutinative morphology)
+
+### Related projects
+
+- Dutch Study Agent
+- Multilingual Benchmark Explorer
