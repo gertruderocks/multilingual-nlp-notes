@@ -1,172 +1,268 @@
 # Russian
 
-## Why Russian matters for AI
+## AI engineering profile
 
-Russian is one of the most widely represented Slavic languages in multilingual AI datasets and serves as an important benchmark for evaluating morphologically rich languages written in the Cyrillic script.
+Russian is one of the world's most important languages for multilingual AI engineering.
 
-Russian provides useful comparisons with both closely related Slavic languages and neighboring non-Slavic languages such as Finnish, Estonian, and Turkic languages.
+As an East Slavic language with rich fusional morphology, the Cyrillic writing system, and extensive multilingual resources, Russian provides an outstanding benchmark for studying tokenization, embeddings, retrieval, multilingual reasoning, and cross-lingual transfer.
+
+Within the Multilingual Benchmark Explorer, Russian serves as the flagship Slavic language and as an important bridge between Slavic, Uralic, Turkic, and Caucasian language communities.
 
 ---
 
-## AI relevance
+## Why Russian is an important benchmark
 
-- multilingual language models
-- cross-script evaluation
-- retrieval across Cyrillic and Latin
-- multilingual embeddings
-- machine translation
-- named entity recognition
-- information retrieval
+Russian provides an excellent benchmark because it combines:
+
+- extensive digital language resources
+- rich fusional morphology
+- the Cyrillic writing system
+- strong multilingual NLP support
+- extensive multilingual corpora
+- long histories of language contact with neighboring language families
+
+This makes Russian valuable for investigating multilingual AI across both linguistic and regional dimensions.
 
 ---
 
 ## Language family
 
-Indo-European
-
-→ Balto-Slavic
+**Indo-European**
 
 → Slavic
 
 → East Slavic
 
-Related languages include:
+Closely related languages include:
 
 - Ukrainian
 - Belarusian
 
-Useful comparison languages
+Useful comparison languages include:
 
-- Polish
-- Czech
-- Slovak
-- Bulgarian
+- Finnish
+- Estonian
+- Erzya
+- Azerbaijani
+- Georgian
+- Latvian
 
 ---
 
 ## Writing system
 
-- Cyrillic alphabet
-- relatively phonemic orthography
-- capitalization rules
-- punctuation differences
-- Unicode considerations
+Modern Russian uses the Cyrillic alphabet.
 
-Possible experiments
+Topics of interest include:
 
-- tokenization of Cyrillic text
-- multilingual retrieval across scripts
-- normalization
+- Cyrillic tokenization
+- Unicode normalization
+- multilingual vocabularies
+- cross-script retrieval
+
+Research questions:
+
+- How do multilingual tokenizers represent Cyrillic?
+- Does script influence multilingual retrieval?
+- How efficiently do multilingual vocabularies represent Russian?
 
 ---
 
 ## Morphology
 
-Russian exhibits rich inflectional morphology.
+Russian exhibits rich fusional morphology.
 
-Topics to investigate
+Characteristics include:
 
-- noun declension
+- grammatical case
+- grammatical gender
 - verbal aspect
-- case system
-- agreement
+- extensive inflection
 - derivational morphology
 
-Research questions
+Research questions:
 
-- How much morphology survives subword tokenization?
-- How do embeddings represent inflected forms?
+- How does fusional morphology influence tokenization?
+- Which embedding models best represent Russian?
+- How does Russian compare with Finnish and Turkish?
 
 ---
 
 ## Tokenization
 
-Questions
+Russian provides valuable opportunities for tokenizer evaluation.
 
-- Does BPE fragment Russian more than English?
-- How are prefixes and suffixes segmented?
-- What happens with long compound technical terms?
+Potential investigations:
 
-Possible comparisons
+- Byte Pair Encoding (BPE)
+- SentencePiece
+- WordPiece
+- Byte-level tokenization
 
-- Russian vs Finnish
-- Russian vs Polish
-- Russian vs English
+Research questions:
+
+- How efficiently are Russian word forms represented?
+- How does Cyrillic influence tokenizer vocabularies?
+- How does Russian compare with Ukrainian and Finnish?
 
 ---
 
 ## Embeddings
 
-Research questions
+Potential investigations include:
 
+- multilingual embedding alignment
 - nearest-neighbor inspection
 - semantic similarity
-- analogy tests
-- cross-lingual alignment
+- clustering analysis
+
+Research questions:
+
+- How closely are Russian embeddings aligned with Ukrainian?
+- How well do multilingual embeddings represent fusional morphology?
+- How does script influence multilingual embedding spaces?
 
 ---
 
 ## Retrieval
 
-Questions
+Potential investigations include:
 
-- retrieval in Cyrillic
-- transliterated search
-- multilingual RAG
-- cross-language retrieval
+- semantic search
+- multilingual retrieval
+- Retrieval-Augmented Generation (RAG)
+- cross-lingual retrieval
+
+Research questions:
+
+- Can Russian queries retrieve Finnish or Estonian documents?
+- How well do multilingual embedding models support Cyrillic retrieval?
+- Which retrieval models perform best across writing systems?
 
 ---
 
 ## Translation
 
-Interesting comparisons
+Interesting language pairs include:
 
-Russian ↔ English
+- Russian ↔ Ukrainian
+- Russian ↔ Finnish
+- Russian ↔ Estonian
+- Russian ↔ Azerbaijani
+- Russian ↔ Georgian
+- Russian ↔ English
 
-Russian ↔ Finnish
+Research questions:
 
-Russian ↔ Estonian
+- How does language family influence multilingual translation?
+- How does language contact influence translation quality?
+- How does script influence multilingual translation?
 
-Russian ↔ Turkish
+---
+
+## Language contact
+
+Russian has experienced centuries of interaction with neighboring language communities across Northern Eurasia.
+
+Within this repository, Russian provides valuable opportunities to investigate multilingual AI in settings involving:
+
+- Finnic languages
+- Uralic languages
+- Turkic languages
+- Baltic languages
+- Kartvelian languages
+
+Research questions:
+
+- How does long-term language contact influence multilingual embeddings?
+- Can language contact improve multilingual retrieval?
+- How should multilingual evaluation account for regional multilingualism?
 
 ---
 
 ## Language resources
 
-Possible future additions
+Potential resources include:
 
-- spaCy
+- Universal Dependencies
 - Hugging Face models
+- Stanza
 - OPUS
 - Wikipedia
-- Universal Dependencies
 - Common Crawl
+- Taiga Corpus
 
 ---
 
 ## Example datasets
 
-Future work
+Potential datasets include:
 
-- XNLI
-- FLORES
+- FLORES-200
 - MASSIVE
 - MIRACL
-- BEIR
+- MTEB
+- OPUS
 - Universal Dependencies
 
 ---
 
 ## Interesting research papers
 
-Future bibliography
+Future bibliography.
+
+Potential topics include:
+
+- Russian NLP
+- multilingual embeddings
+- Cyrillic tokenization
+- multilingual retrieval
+- cross-lingual transfer
 
 ---
 
 ## Future experiments
 
-- Compare tokenization with Finnish.
-- Compare embeddings with Ukrainian.
-- Measure multilingual retrieval performance.
-- Compare Cyrillic and Latin retrieval.
-- Evaluate multilingual LLM reasoning.
+Potential investigations include:
+
+- Compare Russian and Ukrainian tokenization.
+- Compare Russian and Finnish multilingual retrieval.
+- Compare Cyrillic and Latin tokenization.
+- Evaluate multilingual embeddings across Slavic and Uralic languages.
+- Measure multilingual reasoning using Russian prompts.
+- Build visualizations of multilingual embedding neighborhoods.
+- Investigate language contact across Northern Eurasia.
+
+---
+
+## Why this language belongs in the Multilingual Benchmark Explorer
+
+Russian serves as the repository's flagship Slavic language and its primary benchmark for investigating fusional morphology, Cyrillic tokenization, and multilingual AI across Northern Eurasia.
+
+Its combination of rich linguistic resources, extensive multilingual datasets, and long history of interaction with Uralic, Turkic, Baltic, and Caucasian language communities makes it uniquely valuable for studying how language family relationships, writing systems, and language contact influence modern multilingual AI systems.
+
+---
+
+## Repository connections
+
+Related language profiles:
+
+- Ukrainian
+- Finnish
+- Estonian
+- Erzya
+- Azerbaijani
+- Georgian
+- Latvian
+
+Related documentation:
+
+- `language-families.md`
+- `language-contact.md`
+- `comparative-methodology.md`
+- `tokenization.md`
+- `morphology.md`
+- `embeddings.md`
+- `retrieval.md`
+- `evaluation.md`
+- `multilingual-llms.md`

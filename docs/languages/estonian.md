@@ -2,34 +2,36 @@
 
 ## AI engineering profile
 
-Estonian is a Finnic language within the Uralic language family and one of the closest living relatives of Finnish. Although it has fewer speakers than many major European languages, Estonian benefits from strong national investment in digital infrastructure, language technology, and open linguistic resources.
+Estonian is a Finnic language within the Uralic language family and one of the closest major comparison languages to Finnish.
 
-Within this repository, Estonian serves as one of the primary benchmark languages for studying:
+Estonian combines rich morphology with strong digital infrastructure, established language-technology resources, and a history of sustained contact with German, Russian, Swedish, Finnish, and neighboring Baltic languages.
 
-- multilingual embeddings
-- tokenization
-- morphology
-- retrieval
-- cross-lingual transfer
-- multilingual evaluation
+Within the Multilingual Benchmark Explorer, Estonian serves as a primary benchmark for studying tokenization, embeddings, retrieval, multilingual evaluation, and cross-lingual transfer between closely related languages.
 
-Estonian is particularly valuable because it enables comparisons between:
+---
 
-- closely related languages (Estonian ↔ Finnish)
-- related languages with different national histories
-- higher-resource and lower-resource settings
-- shared vocabulary versus divergent morphology
-- multilingual embedding alignment across the Finnic branch
+## Why Estonian is an important benchmark
 
-These comparisons help isolate the effects of language relatedness on multilingual AI systems.
+Estonian is especially valuable because it supports comparisons involving:
+
+- closely related Finnic languages
+- rich morphology
+- strong and limited-resource language settings
+- historical language contact
+- multilingual societies
+- differences between linguistic similarity and geographic proximity
+
+This makes Estonian an effective bridge between the repository’s Finnish-centered experiments and its broader work on Baltic and Northern European multilingual AI.
+
+---
 
 ## Language family
 
-Uralic
+**Uralic**
 
 → Finnic
 
-Related languages include:
+Closely related languages include:
 
 - Finnish
 - Karelian
@@ -38,12 +40,14 @@ Related languages include:
 - Võro
 - Seto
 
-Useful comparison languages:
+Useful comparison languages include:
 
 - Finnish
-- Meänkieli
+- Swedish
+- German
 - Russian
 - Latvian
+- Meänkieli
 
 ---
 
@@ -53,9 +57,10 @@ Modern Estonian uses the Latin alphabet.
 
 Topics of interest include:
 
-- Unicode normalization
 - diacritics
+- Unicode normalization
 - orthographic consistency
+- compound formation
 - multilingual search
 
 Research questions:
@@ -63,118 +68,196 @@ Research questions:
 - How do multilingual tokenizers segment Estonian words?
 - Do diacritics influence retrieval quality?
 - How well do multilingual systems normalize orthographic variation?
+- How does written-language history affect tokenizer vocabulary and retrieval behavior?
 
 ---
 
 ## Morphology
 
-Estonian exhibits rich inflectional morphology while generally having less productive agglutination than Finnish.
+Estonian has rich inflectional morphology.
 
-Topics of interest include:
+Characteristics include:
 
-- noun case system
-- verb inflection
+- an extensive case system
+- noun and verb inflection
 - derivational morphology
 - compound formation
+- morphophonological variation
 
 Research questions:
 
-- How does Estonian morphology influence multilingual embeddings?
-- How does it compare with Finnish?
-- Which morphological features are preserved after tokenization?
+- How does Estonian morphology influence tokenization?
+- Which morphological features remain visible in multilingual embeddings?
+- How does Estonian compare with Finnish?
+- How well do retrieval systems handle inflected and derived forms?
 
 ---
 
 ## Tokenization
 
-Potential investigations:
+Estonian provides a strong benchmark for evaluating tokenization in a morphologically rich Finnic language.
+
+Potential investigations include:
 
 - Byte Pair Encoding (BPE)
 - SentencePiece
 - WordPiece
+- byte-level tokenization
 
 Research questions:
 
 - How frequently are Estonian words fragmented?
 - How does tokenizer efficiency compare with Finnish?
-- Which tokenizer best preserves meaningful morphemes?
+- Which tokenizers best preserve meaningful morphological units?
+- How does tokenization affect sequence length and downstream performance?
 
 ---
 
 ## Embeddings
 
-Potential investigations:
+Potential investigations include:
 
+- multilingual embedding alignment
 - nearest-neighbor inspection
 - semantic similarity
-- multilingual alignment
 - clustering analysis
+- cognate representation
 
 Research questions:
 
 - How closely do Estonian embeddings align with Finnish?
 - Can multilingual models distinguish Estonian from Latvian?
-- How do embeddings represent cognates across Finnic languages?
+- How are Finnic cognates represented?
+- Do language-contact relationships appear in embedding neighborhoods?
 
 ---
 
 ## Retrieval
 
-Potential investigations:
+Potential investigations include:
 
 - semantic search
 - multilingual retrieval
 - Retrieval-Augmented Generation (RAG)
 - cross-lingual retrieval
+- multilingual public-information access
 
 Research questions:
 
 - Can Finnish improve retrieval performance for Estonian?
 - How well do multilingual embedding models retrieve Estonian documents?
-- Which embedding models perform best?
+- Can Estonian queries retrieve relevant Finnish, Swedish, German, or Russian content?
+- Which retrieval models perform best across related and contact languages?
 
 ---
 
 ## Translation
 
-Interesting language pairs:
+Interesting language pairs include:
 
 - Estonian ↔ Finnish
-- Estonian ↔ English
+- Estonian ↔ Swedish
+- Estonian ↔ German
 - Estonian ↔ Russian
 - Estonian ↔ Latvian
+- Estonian ↔ English
 
 Research questions:
 
-- Which language pairs demonstrate the strongest transfer?
-- How does translation quality compare between related and unrelated languages?
+- Which language pairs demonstrate the strongest multilingual transfer?
+- How does translation differ between related and unrelated languages?
+- Does historical language contact improve translation quality?
+- How well do models preserve Estonian morphology during translation?
+
+---
+
+## Language contact
+
+Estonian has developed through sustained contact with several neighboring and historically influential languages.
+
+Important contact relationships include:
+
+- Estonian ↔ German
+- Estonian ↔ Russian
+- Estonian ↔ Swedish
+- Estonian ↔ Finnish
+- Estonian ↔ Latvian
+
+### Estonian and German
+
+German-speaking clergy, scholars, administrators, and publishers played an important role in the early development and standardization of written Estonian.
+
+Potential investigations include:
+
+- lexical borrowing
+- historical orthographic influence
+- multilingual embeddings
+- retrieval across historical and modern corpora
+
+### Estonian and Russian
+
+Estonian and Russian have coexisted within multilingual political, educational, and social environments.
+
+Potential investigations include:
+
+- cross-lingual retrieval
+- multilingual public information
+- translation
+- embedding alignment
+- retrieval across Latin and Cyrillic scripts
+
+### Estonian and Swedish
+
+Parts of present-day Estonia were governed by Sweden during the early modern period. Swedish influence was especially relevant to administration, education, institutions, and regional multilingualism.
+
+Potential investigations include:
+
+- Swedish loanwords in Estonian
+- historical multilingual corpora
+- Swedish–Estonian embedding relationships
+- cross-lingual retrieval across Baltic and Nordic sources
+- the effect of institutional language contact on modern multilingual representations
+
+Research questions:
+
+- Can embedding models distinguish shared ancestry from historical contact?
+- Do borrowed words create measurable similarities between unrelated languages?
+- How does long-term contact influence multilingual retrieval?
+- Can historical corpora reveal changes in cross-lingual alignment over time?
 
 ---
 
 ## Language resources
 
-Potential resources for future investigation:
+Potential resources include:
 
 - Universal Dependencies
-- spaCy
+- Estonian National Corpus
+- Estonian Reference Corpus
+- EstNLTK
+- Stanza
 - Hugging Face models
 - OPUS
-- Estonian National Corpus
 - Wikipedia
 - Common Crawl
+
+Resource availability and licensing should be verified before individual experiments are implemented.
 
 ---
 
 ## Example datasets
 
-Potential datasets for evaluation:
+Potential datasets include:
 
 - Universal Dependencies
 - FLORES-200
 - MASSIVE
 - MIRACL
+- MTEB
 - OPUS
-- custom multilingual benchmarks
+- custom multilingual benchmark datasets
+
+Dataset coverage should be confirmed during experiment planning.
 
 ---
 
@@ -184,22 +267,36 @@ Future bibliography.
 
 Potential topics include:
 
+- Estonian NLP
+- Finnic language technology
 - multilingual embeddings
-- Finnic language NLP
-- low-resource NLP
+- morphological processing
 - multilingual retrieval
-- language technology for Estonian
+- historical language contact
+- cross-lingual transfer
 
 ---
 
 ## Future experiments
 
+Potential investigations include:
+
 - Compare Finnish and Estonian tokenization.
-- Compare multilingual embeddings across Finnic languages.
-- Measure cross-lingual retrieval between Finnish and Estonian.
-- Evaluate multilingual LLM reasoning in Estonian.
-- Visualize multilingual embedding neighborhoods.
-- Compare retrieval performance across Uralic languages.
+- Compare embedding alignment across Finnic languages.
+- Measure Finnish–Estonian cross-lingual retrieval.
+- Compare Estonian retrieval across Finnish, Swedish, German, and Russian.
+- Investigate German and Swedish lexical influence in embedding neighborhoods.
+- Compare Latin- and Cyrillic-script retrieval using Estonian and Russian.
+- Evaluate multilingual reasoning using Estonian prompts.
+- Build a Baltic and Nordic language-contact visualization.
+
+---
+
+## Why this language belongs in the Multilingual Benchmark Explorer
+
+Estonian serves as the repository’s primary comparison language for Finnish and as an important case study in multilingual AI across the Baltic and Nordic regions.
+
+Its combination of rich Finnic morphology, strong digital language resources, close relationship with Finnish, and sustained contact with German, Russian, Swedish, and Latvian makes it especially valuable for separating the effects of language-family relationships, language contact, writing systems, and resource availability.
 
 ---
 
@@ -208,20 +305,25 @@ Potential topics include:
 Related language profiles:
 
 - Finnish
+- Swedish
+- German
+- Russian
+- Latvian
 - Meänkieli
 - Karelian
 - Livonian
-- Seto
 - Võro
-- Russian
-- Latvian
+- Seto
 
 Related documentation:
 
 - `language-families.md`
+- `language-contact.md`
 - `comparative-methodology.md`
 - `tokenization.md`
+- `morphology.md`
 - `embeddings.md`
 - `retrieval.md`
 - `evaluation.md`
-- `low-resource-languages.md`
+- `multilingual-llms.md`
+- `underrepresented-languages.md`

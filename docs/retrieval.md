@@ -1,270 +1,216 @@
 # Retrieval
 
-## What is retrieval?
+Retrieval is one of the core capabilities of modern AI systems.
 
-Retrieval is the process of finding the most relevant information for a given query.
+Rather than generating answers solely from model parameters, retrieval systems identify relevant information from external knowledge sources and incorporate it into downstream tasks such as search, question answering, Retrieval-Augmented Generation (RAG), recommendation systems, and AI agents.
 
-Modern AI systems often retrieve documents, passages, or structured knowledge before generating a response. Rather than relying only on information stored in model parameters, retrieval allows AI systems to access external knowledge that can be updated independently of the model.
-
-Retrieval is a core component of search engines, enterprise search, Retrieval-Augmented Generation (RAG), recommendation systems, question answering, and multilingual AI.
+Within the Multilingual Benchmark Explorer, retrieval is studied across multiple languages, writing systems, language families, and resource settings to better understand how multilingual AI systems access and rank information.
 
 ---
 
-## Why does retrieval matter?
+# Research questions
 
-Retrieval enables AI systems to find relevant information efficiently while improving accuracy, transparency, and factual grounding.
+This repository investigates questions such as:
 
-Applications include:
-
-- Search engines
-- Semantic search
-- Enterprise search
-- Information retrieval
-- Question answering
-- Retrieval-Augmented Generation (RAG)
-- Recommendation systems
-- Knowledge management
-- Multilingual search
-- AI assistants
-
-Well-designed retrieval systems improve answer quality, reduce hallucinations, and allow language models to work with continuously changing information.
-
----
-
-## Questions I want to explore
-
-- How does multilingual retrieval differ from monolingual retrieval?
-- Which embedding models produce the strongest retrieval performance?
-- How does morphology influence retrieval quality?
-- How does tokenization affect retrieval performance?
-- How does language contact influence multilingual retrieval?
+- How does retrieval performance vary across languages?
 - How do writing systems influence retrieval quality?
+- How does morphology affect semantic search?
+- Which multilingual embedding models perform best?
 - How should multilingual retrieval systems be evaluated?
-- How should AI systems retrieve information for Indigenous and endangered languages?
-- Which language comparisons best reveal the strengths and weaknesses of multilingual retrieval systems?
+- How does language relatedness influence cross-lingual retrieval?
+- How does historical language contact influence multilingual retrieval?
 
 ---
 
-## Retrieval approaches
+# Retrieval architectures
 
-### Keyword retrieval
+Modern retrieval systems commonly include:
 
-Keyword retrieval matches documents using exact words or phrases.
+- lexical retrieval
+- dense retrieval
+- sparse retrieval
+- hybrid retrieval
+- neural retrieval
+- reranking pipelines
 
-Traditional search engines commonly use approaches such as TF-IDF or BM25.
-
-Strengths:
-
-- Fast
-- Explainable
-- Strong lexical precision
-
-Limitations:
-
-- Sensitive to vocabulary mismatch
-- Limited semantic understanding
-
-Questions to explore:
-
-- When does keyword retrieval outperform semantic retrieval?
-- Which languages benefit most from keyword search?
+Each approach has different strengths depending on the language, corpus, and application.
 
 ---
 
-### Semantic retrieval
+# Lexical retrieval
 
-Semantic retrieval uses embeddings to retrieve documents based on meaning rather than exact word matches.
-
-This allows semantically related documents to be retrieved even when different vocabulary is used.
-
-Strengths:
-
-- Captures semantic similarity
-- Supports multilingual retrieval
-- Handles vocabulary variation
-
-Limitations:
-
-- Depends on embedding quality
-- More computationally expensive
-
-Questions to explore:
-
-- Which embedding models produce the strongest multilingual retrieval?
-- How does semantic retrieval perform across language families?
-
----
-
-### Hybrid retrieval
-
-Hybrid retrieval combines keyword retrieval with semantic retrieval.
-
-Many production AI systems use hybrid retrieval because it balances lexical precision with semantic understanding.
-
-Questions to explore:
-
-- When does hybrid retrieval outperform semantic retrieval?
-- How should hybrid retrieval systems be evaluated?
-
----
-
-### Cross-lingual retrieval
-
-Cross-lingual retrieval allows users to search in one language while retrieving documents written in another.
-
-This capability is increasingly important for multilingual AI systems.
-
-Questions to explore:
-
-- How well do multilingual embeddings support cross-lingual retrieval?
-- Which language pairs transfer most effectively?
-- How does language relatedness influence retrieval quality?
-
----
-
-## Common retrieval architectures
-
-Modern AI systems often combine multiple retrieval components.
+Traditional retrieval relies primarily on matching words or tokens.
 
 Examples include:
 
-- Dense retrieval
-- Sparse retrieval
-- Hybrid retrieval
-- Multi-stage retrieval
-- Reranking pipelines
+- BM25
+- TF-IDF
+- inverted indexes
 
-Questions to explore:
+Advantages:
 
-- When should reranking be introduced?
-- What are the tradeoffs between retrieval quality and latency?
+- fast
+- interpretable
+- effective for exact terminology
 
----
+Challenges:
 
-## Engineering considerations
-
-Retrieval quality depends on many interconnected design decisions.
-
-Important factors include:
-
-- Tokenization
-- Embedding model
-- Chunk size
-- Chunk overlap
-- Metadata
-- Indexing strategy
-- Vector database
-- Distance metric
-- Reranking
-- Context window size
-
-Understanding these tradeoffs is essential for production AI systems.
+- vocabulary mismatch
+- morphology
+- multilingual search
+- synonym handling
 
 ---
 
-## Engineering implications
+# Dense retrieval
 
-Retrieval decisions influence downstream AI behavior.
+Dense retrieval represents documents and queries as vector embeddings.
 
-Examples include:
+Advantages include:
 
-- Answer quality
-- Hallucination rate
-- Latency
-- Inference cost
-- Context utilization
-- User experience
-- Scalability
-- Production reliability
+- semantic similarity
+- multilingual search
+- synonym matching
+- robust cross-lingual retrieval
 
-Retrieval should therefore be evaluated as part of the complete AI system rather than as an isolated component.
+Representative embedding models include:
 
----
-
-## Common evaluation metrics
-
-### Recall@K
-
-Measures whether relevant documents appear within the top K retrieved results.
-
-Questions to explore:
-
-- Which values of K are most informative?
-- How does Recall@K vary across language families?
+- multilingual-e5
+- BGE
+- GTE
+- Jina embeddings
+- multilingual Sentence Transformers
 
 ---
 
-### Mean Reciprocal Rank (MRR)
+# Hybrid retrieval
 
-Measures how highly the first relevant document appears in ranked retrieval results.
+Many production AI systems combine lexical and dense retrieval.
 
-Questions to explore:
+Potential pipeline:
 
-- How should MRR be interpreted for multilingual retrieval?
-- Which retrieval systems consistently achieve higher MRR?
+```
+Query
+   ↓
+Lexical Retrieval
+   ↓
+Dense Retrieval
+   ↓
+Hybrid Ranking
+   ↓
+Reranker
+   ↓
+LLM
+```
 
----
-
-### Normalized Discounted Cumulative Gain (nDCG)
-
-Measures both document relevance and ranking quality.
-
-Questions to explore:
-
-- Why is nDCG useful for multilingual retrieval?
-- How does nDCG compare with Recall@K and MRR?
-
----
-
-## Comparative case studies
-
-| Comparison | Comparison type | Engineering question |
-|------------|----------------|----------------------|
-| Finnish ↔ Russian | Neighboring language families, different scripts | How does morphology influence multilingual retrieval? |
-| Finnish ↔ Estonian | Closely related languages | Does language relatedness improve retrieval? |
-| Finnish ↔ Karelian | Low-resource language | Can multilingual retrieval transfer effectively to low-resource languages? |
-| Finnish ↔ Meänkieli | Language contact | Can retrieval capture lexical borrowing and language contact? |
-| North Sámi ↔ Norwegian | Indigenous language support | How well do multilingual retrieval systems support Indigenous languages? |
-| Russian ↔ Estonian | Language contact | How does multilingual retrieval perform across neighboring language families? |
-| Russian ↔ Latvian | Language contact | How does multilingual retrieval behave in multilingual societies? |
-| Russian ↔ Azerbaijani | Regional multilingualism | Can multilingual retrieval transfer across language families? |
-| Persian ↔ Azerbaijani | Cross-border multilingualism | How does multilingual retrieval perform across bilingual communities? |
-| Dutch ↔ German | Closely related languages | Does lexical similarity improve retrieval quality? |
-| German ↔ Estonian | Historical language contact | How does historical language contact influence retrieval? |
-| Russian ↔ Ukrainian | Closely related Slavic languages | How effectively do multilingual models transfer retrieval knowledge? |
-| Turkish ↔ Azerbaijani | Closely related Turkic languages | How transferable are multilingual retrieval representations? |
-| Georgian ↔ Armenian | Neighboring language families | How well do multilingual retrieval systems generalize across unrelated neighboring languages? |
-| Russian ↔ Georgian | Neighboring language families | How do language family and script differences influence retrieval? |
-| Azerbaijani ↔ Lezgin | Minority language contact | How well do multilingual retrieval systems support minority languages? |
+Hybrid systems often outperform either approach used independently.
 
 ---
 
-## Future experiments
+# Cross-lingual retrieval
 
-Examples include:
+One of the most important areas of multilingual AI.
 
-- Compare BM25 and semantic retrieval
-- Compare E5, BGE, and OpenAI embeddings
-- Evaluate multilingual retrieval across language families
-- Measure retrieval quality for morphologically rich languages
-- Compare retrieval performance for closely related and unrelated languages
-- Investigate multilingual retrieval for Indigenous languages
-- Evaluate hybrid retrieval versus semantic retrieval
-- Compare reranking strategies across multilingual datasets
+Research questions include:
 
----
+- Can a query written in one language retrieve documents written in another?
+- Which multilingual embedding models best support cross-lingual retrieval?
+- How does retrieval differ between related and unrelated languages?
+- How much does language contact influence retrieval quality?
 
-## Open questions
+Example comparisons:
 
-- Which embedding model produces the strongest multilingual retrieval?
-- How much does morphology influence retrieval quality?
-- Which language comparisons reveal weaknesses in multilingual retrieval?
-- How should multilingual retrieval systems be evaluated fairly?
-- How should AI systems support low-resource and Indigenous languages?
-- How should retrieval be optimized for production AI systems?
+- Finnish ↔ Estonian
+- Finnish ↔ Russian
+- Dutch ↔ German
+- Russian ↔ Ukrainian
+- Azerbaijani ↔ Turkish
+- North Sámi ↔ Norwegian
 
 ---
 
-## References
+# Factors influencing retrieval
 
-(To be added.)
+Retrieval performance depends on many linguistic characteristics, including:
+
+- morphology
+- writing system
+- tokenization
+- vocabulary overlap
+- orthographic variation
+- language relatedness
+- historical language contact
+- corpus size
+- training data availability
+
+These factors are explored throughout the repository using comparative multilingual experiments.
+
+---
+
+# Evaluation
+
+Common retrieval metrics include:
+
+- Recall@K
+- Precision@K
+- Mean Reciprocal Rank (MRR)
+- nDCG
+- Hit Rate
+- latency
+- throughput
+
+Evaluation should consider both retrieval accuracy and system performance.
+
+---
+
+# Example datasets
+
+Potential datasets include:
+
+- MIRACL
+- BEIR
+- Mr. TyDi
+- MKQA
+- XOR QA
+- MASSIVE
+- FLORES-200
+- OPUS
+
+Additional datasets may be incorporated as the repository evolves.
+
+---
+
+# Future experiments
+
+Potential investigations include:
+
+- Compare dense retrieval across language families.
+- Measure retrieval quality for morphologically rich languages.
+- Compare lexical and dense retrieval for Finnish compounds.
+- Evaluate multilingual retrieval across related languages.
+- Compare retrieval across languages with historical language contact.
+- Compare retrieval performance for underrepresented languages.
+- Visualize multilingual embedding neighborhoods used for retrieval.
+- Benchmark multilingual reranking models.
+
+---
+
+# Repository connections
+
+General concepts:
+
+- `embeddings.md`
+- `tokenization.md`
+- `evaluation.md`
+- `retrieval-augmented-generation.md`
+
+Comparative methodology:
+
+- `comparative-methodology.md`
+- `language-families.md`
+- `language-contact.md`
+- `underrepresented-languages.md`
+
+Language-specific case studies:
+
+See the individual language profiles in `docs/languages/` for language-specific retrieval considerations.

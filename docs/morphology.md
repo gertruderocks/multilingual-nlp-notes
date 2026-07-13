@@ -1,284 +1,260 @@
 # Morphology
 
-## What is morphology?
+Morphology studies how words are formed and how their internal structure conveys meaning.
 
-Morphology is the study of how words are formed and how their internal structure conveys meaning.
+For multilingual AI systems, morphology is far more than a linguistic concept—it directly influences tokenization, embeddings, retrieval, translation, language modeling, and overall system performance.
 
-Many languages build words by combining roots, prefixes, suffixes, infixes, and other grammatical elements. These patterns influence how AI systems tokenize text, learn embeddings, retrieve information, and generate language.
-
-Understanding morphology is essential for building multilingual AI systems that perform well across diverse languages, language families, writing systems, and resource levels.
+Within the Multilingual Benchmark Explorer, morphology is studied as one of the key variables that helps explain why multilingual AI systems behave differently across languages.
 
 ---
 
-## Why does morphology matter?
+# Research questions
 
-Morphology influences nearly every stage of a modern AI pipeline.
+This repository investigates questions such as:
 
-Applications include:
+- How does morphology influence tokenization?
+- Which multilingual models best support morphologically rich languages?
+- How does morphology affect multilingual embeddings?
+- How does morphology influence semantic retrieval?
+- How well do multilingual LLMs generalize across different morphological systems?
+- How should morphology be considered when evaluating multilingual AI?
 
-- Tokenization
-- Embeddings
-- Information retrieval
+---
+
+# Why morphology matters
+
+Morphology affects many downstream AI tasks, including:
+
+- tokenization
+- embeddings
+- semantic search
 - Retrieval-Augmented Generation (RAG)
-- Machine translation
-- Text generation
-- Named Entity Recognition (NER)
-- Semantic search
-- Cross-lingual retrieval
-- Multilingual AI systems
+- multilingual retrieval
+- machine translation
+- reasoning
+- evaluation
 
-Morphologically rich languages often produce many surface forms for a single lemma, creating unique engineering challenges for tokenization, retrieval, evaluation, and inference.
+Rich morphology often increases vocabulary diversity, introduces many surface forms for the same lexical item, and influences how efficiently language models represent meaning.
 
 ---
 
-## Questions I want to explore
+# What is morphology?
 
-- Why are morphologically rich languages challenging for language models?
-- How does morphology affect tokenization?
-- How do embedding models represent inflected words?
-- How does morphology influence retrieval quality?
-- How does morphology affect Retrieval-Augmented Generation (RAG)?
-- How do multilingual models generalize across related languages?
-- How does language contact influence morphological variation?
-- Which tokenization algorithms perform best for agglutinative languages?
-- How should multilingual AI systems be evaluated on morphologically rich languages?
-- How should AI systems support Indigenous and endangered languages with limited training data?
+Morphology examines how meaningful units (morphemes) combine to form words.
+
+These units include:
+
+- roots
+- prefixes
+- suffixes
+- infixes
+- clitics
+- compounds
+
+Languages differ substantially in how they construct words, making morphology one of the defining challenges for multilingual NLP.
 
 ---
 
-## Common morphological processes
+# Morphological typology
 
-### Inflection
+Languages can be grouped according to their dominant morphological characteristics.
 
-Inflection changes the grammatical form of a word without changing its core meaning.
+## Analytic
+
+Words contain relatively little inflection.
 
 Examples include:
 
-- Case
-- Number
-- Gender
-- Person
-- Tense
-- Mood
-
-Questions to explore:
-
-- How many inflected forms can a Finnish noun have?
-- How do multilingual models learn inflectional patterns?
-- How does inflection influence retrieval quality?
+- English
+- Mandarin Chinese
 
 ---
 
-### Derivation
+## Fusional
 
-Derivation creates new words by adding prefixes or suffixes that change meaning or grammatical category.
+Single affixes often express multiple grammatical features simultaneously.
 
-Questions to explore:
+Examples include:
 
-- How well do embedding models represent derived words?
-- Can multilingual models generalize derivational patterns?
-- How does derivation influence semantic similarity?
-
----
-
-### Compounding
-
-Compounding combines multiple words into a single lexical item.
-
-Common examples occur in:
-
-- Dutch
+- Russian
 - German
-- Swedish
-- Norwegian
-- Finnish
-
-Questions to explore:
-
-- How do tokenizers segment compound words?
-- How do embeddings represent compound words?
-- How does compound splitting affect retrieval?
+- Spanish
+- Ukrainian
 
 ---
 
-### Agglutination
+## Agglutinative
 
-Agglutinative languages build words by attaching multiple grammatical suffixes in sequence.
+Words are formed by combining sequences of morphemes, with each morpheme typically expressing a single grammatical function.
 
 Examples include:
 
 - Finnish
 - Estonian
-- Karelian
+- Meänkieli
 - North Sámi
 - Turkish
 - Azerbaijani
 - Hungarian
 
-Questions to explore:
+---
 
-- How does agglutination affect tokenization?
-- Which embedding models perform best on agglutinative languages?
-- Does retrieval quality decrease as morphological complexity increases?
+## Polysynthetic
+
+Words may encode information that would require an entire sentence in many other languages.
+
+These languages remain an important area for future multilingual AI research.
 
 ---
 
-### Fusional morphology
+# Morphology and tokenization
 
-Fusional languages often combine multiple grammatical meanings into a single ending.
+Morphological structure strongly influences tokenizer behavior.
 
-Examples include:
+Research questions include:
 
-- Russian
-- Ukrainian
-- Polish
-- Slovenian
-
-Questions to explore:
-
-- How do transformer models represent fusional morphology?
-- How does fusional morphology compare with agglutination?
-- How does fusional morphology affect multilingual embeddings?
+- Which tokenizers preserve meaningful morphemes?
+- Which languages experience the greatest token fragmentation?
+- How does morphology influence sequence length?
+- Which tokenization algorithms best support agglutinative languages?
 
 ---
 
-## Morphology across language families
+# Morphology and embeddings
 
-### Uralic
+Embedding models must learn semantic representations despite potentially large numbers of word forms.
 
-Research languages:
+Research questions include:
 
-- Finnish
-- Estonian
-- Karelian
-- Meänkieli
-- North Sámi
-
-Characteristics:
-
-- Rich case systems
-- Agglutination
-- Productive word formation
-- Long word forms
+- Can embeddings preserve relationships between inflected forms?
+- How well do multilingual embeddings represent productive morphology?
+- How closely are morphologically related words clustered?
 
 ---
 
-### Germanic
+# Morphology and retrieval
 
-Research languages:
+Morphology also affects multilingual retrieval.
 
-- Dutch
-- German
-- Swedish
-- Norwegian
+Potential challenges include:
 
-Characteristics:
+- inflectional variation
+- derivational variation
+- compound words
+- lexical sparsity
 
-- Compound formation
-- Derivation
-- Moderate inflection
+Research questions include:
 
----
-
-### Slavic
-
-Research languages:
-
-- Russian
-- Ukrainian
-- Polish
-
-Characteristics:
-
-- Rich case systems
-- Verbal aspect
-- Fusional morphology
+- Can dense retrieval overcome morphological variation?
+- Which embedding models best support morphologically rich languages?
+- How should multilingual retrieval systems evaluate inflected languages?
 
 ---
 
-### Turkic
+# Morphology case studies
 
-Research languages:
+The following languages illustrate different engineering challenges for multilingual AI systems.
 
-- Turkish
-- Azerbaijani
+Rather than ranking languages by complexity, these examples highlight opportunities for comparative experiments.
 
-Characteristics:
-
-- Agglutination
-- Vowel harmony
-- Long suffix chains
-
----
-
-### Kartvelian
-
-Research languages:
-
-- Georgian
-
-Characteristics:
-
-- Complex verb morphology
-- Rich agreement systems
-- Extensive verbal inflection
+| Language | Research opportunities |
+|----------|------------------------|
+| Finnish | Compare BPE vs SentencePiece, measure compound fragmentation, evaluate embedding neighborhoods |
+| Estonian | Compare tokenization with Finnish, investigate historical orthographic influence, evaluate multilingual retrieval |
+| Meänkieli | Study language contact with Swedish, minority-language retrieval, multilingual embeddings |
+| North Sámi | Evaluate multilingual transfer from Norwegian and Finnish, benchmark tokenizer performance |
+| Erzya | Compare multilingual transfer from Finnish and Russian, investigate embedding alignment |
+| Hungarian | Measure tokenizer efficiency for long agglutinative words |
+| Russian | Evaluate fusional morphology, grammatical aspect, and cross-script retrieval |
+| Dutch | Compare compound segmentation with German, evaluate multilingual educational AI |
+| German | Investigate compound formation, multilingual embeddings, and retrieval |
+| Turkish | Benchmark agglutinative tokenization and multilingual transfer |
+| Azerbaijani | Compare multilingual embeddings with Turkish and investigate regional language contact |
 
 ---
 
-## Engineering implications
+# Comparative multilingual analysis
 
-Morphology directly affects modern AI systems.
+Rather than studying morphology in isolation, this repository investigates how morphological structure interacts with other factors that influence multilingual AI.
 
-Examples include:
+Comparative experiments may consider:
 
-- Token fragmentation
-- Context window utilization
-- Embedding quality
-- Retrieval accuracy
-- Chunking strategy
-- Vector search
-- RAG performance
-- Inference cost
-- Evaluation methodology
+- language family relationships
+- language contact
+- writing systems
+- tokenization
+- embeddings
+- retrieval
+- resource availability
 
-Understanding morphology helps explain why AI systems may perform differently across languages.
+The objective is to understand which combinations of linguistic and computational factors best explain multilingual AI behavior.
 
 ---
 
-## Comparative case studies
+# Measuring morphological effects
 
-| Comparison | Comparison type | Engineering question |
-|------------|----------------|----------------------|
-| Finnish ↔ Estonian | Closely related languages | How similar are their morphological representations? |
-| Finnish ↔ Russian | Neighboring language families, different morphology | How do agglutinative and fusional systems affect multilingual AI? |
-| Finnish ↔ Karelian | Low-resource language | Can multilingual models transfer morphological knowledge? |
-| Finnish ↔ Meänkieli | Language contact | Does language contact influence morphological representations? |
-| North Sámi ↔ Norwegian | Indigenous language support | How well do AI systems represent morphology across resource levels? |
-| Russian ↔ Estonian | Language contact | How does contact influence multilingual representations? |
-| Russian ↔ Latvian | Language contact | How does multilingual morphology influence retrieval? |
-| Russian ↔ Azerbaijani | Cross-family language contact | How does morphology affect cross-lingual transfer? |
-| Persian ↔ Azerbaijani | Cross-border multilingualism | How do different morphological systems interact? |
-| Dutch ↔ German | Closely related languages | How do compound words influence multilingual models? |
-| German ↔ Estonian | Historical language contact | Does long-term contact influence multilingual representations? |
-| Russian ↔ Ukrainian | Closely related Slavic languages | How well do multilingual models generalize across similar morphological systems? |
-| Turkish ↔ Azerbaijani | Closely related Turkic languages | How transferable are agglutinative representations? |
-| Georgian ↔ Armenian | Neighboring language families | How do distinct morphological systems compare? |
-| Russian ↔ Georgian | Neighboring language families | How do morphology and script jointly affect multilingual AI? |
-| Azerbaijani ↔ Lezgin | Minority language contact | Can multilingual models capture language contact across different families? |
+Potential evaluation approaches include:
+
+- token fragmentation
+- average tokens per word
+- vocabulary coverage
+- embedding similarity
+- retrieval performance
+- downstream task accuracy
+- qualitative error analysis
+
+Morphology should be evaluated through practical AI tasks rather than in isolation.
 
 ---
 
-## Open questions
+# Example datasets
 
-- Which embedding models best capture morphological information?
-- Which tokenization algorithms perform best for agglutinative languages?
-- How does morphology influence retrieval quality?
-- How should morphology be incorporated into multilingual evaluation?
-- How should AI systems support Indigenous and endangered languages?
-- Which language comparisons best reveal the strengths and weaknesses of multilingual AI systems?
+Potential datasets include:
+
+- Universal Dependencies
+- FLORES-200
+- OPUS
+- MASSIVE
+- XNLI
+- OSCAR
+- Wikipedia
+
+Additional datasets may be incorporated as the repository evolves.
 
 ---
 
-## References
+# Future experiments
 
-(To be added.)
+Potential investigations include:
+
+- Compare tokenizer efficiency across morphological types.
+- Measure token fragmentation for agglutinative languages.
+- Compare embedding quality across morphological systems.
+- Evaluate multilingual retrieval for morphologically rich languages.
+- Compare multilingual reasoning across different morphological typologies.
+- Build an interactive morphology explorer.
+- Visualize relationships between morphology and embedding quality.
+
+---
+
+# Repository connections
+
+General concepts:
+
+- `tokenization.md`
+- `embeddings.md`
+- `retrieval.md`
+- `retrieval-augmented-generation.md`
+- `evaluation.md`
+- `multilingual-llms.md`
+
+Comparative methodology:
+
+- `comparative-methodology.md`
+- `language-families.md`
+- `language-contact.md`
+- `underrepresented-languages.md`
+
+Language-specific case studies:
+
+See the individual language profiles in `docs/languages/` for language-specific morphological characteristics and AI engineering considerations.

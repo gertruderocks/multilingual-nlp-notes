@@ -1,218 +1,204 @@
 # Tokenization
 
-## What is tokenization?
+Tokenization is one of the foundational components of modern AI systems.
 
-Tokenization is the process of breaking text into smaller units called tokens.
+Before a language model can represent meaning through embeddings or perform reasoning, text must first be converted into tokens. The quality of tokenization directly influences model efficiency, vocabulary coverage, retrieval performance, translation quality, and downstream AI tasks.
 
-Large language models do not process raw text directly. Instead, they operate on sequences of tokens, making tokenization one of the foundational components of modern AI systems.
-
-The design of a tokenizer influences model performance, multilingual capabilities, inference cost, context utilization, and downstream AI behavior.
+Within the Multilingual Benchmark Explorer, tokenization is studied across language families, writing systems, morphological types, and resource settings to better understand how modern multilingual AI systems process human language.
 
 ---
 
-## Why does tokenization matter?
+# Research questions
 
-Tokenization affects nearly every stage of a modern AI pipeline.
+This repository investigates questions such as:
 
-Applications include:
+- How do different tokenizers segment morphologically rich languages?
+- Which tokenization strategies work best across language families?
+- How do writing systems influence tokenization?
+- How does tokenization affect multilingual embeddings?
+- How does tokenization influence retrieval performance?
+- How well do multilingual tokenizers support underrepresented languages?
+- How does historical language contact influence tokenizer vocabularies?
 
-- Large Language Models (LLMs)
-- Embeddings
-- Semantic search
-- Information retrieval
+---
+
+# What is tokenization?
+
+Tokenization converts raw text into smaller units that language models can process.
+
+These units may include:
+
+- characters
+- bytes
+- subwords
+- words
+- phrases
+
+Modern LLMs primarily rely on subword tokenization because it balances vocabulary size with the ability to represent previously unseen words.
+
+---
+
+# Common tokenization algorithms
+
+Representative approaches include:
+
+- Byte Pair Encoding (BPE)
+- SentencePiece
+- WordPiece
+- Unigram Language Model
+- Byte-level BPE
+
+Different tokenizers often produce substantially different segmentations for the same text.
+
+---
+
+# Why tokenization matters
+
+Tokenization influences many downstream AI capabilities, including:
+
+- embeddings
+- semantic search
 - Retrieval-Augmented Generation (RAG)
-- Machine translation
-- Text generation
-- AI agents
-- Multilingual AI systems
+- multilingual retrieval
+- translation
+- summarization
+- reasoning
+- inference cost
 
-Languages differ dramatically in morphology, writing systems, and vocabulary, making tokenization one of the most important challenges in multilingual AI.
-
----
-
-## Questions I want to explore
-
-- Why is Finnish an interesting tokenization case study?
-- How do BPE, WordPiece, SentencePiece, and Unigram differ?
-- How do tokenizers handle compound words?
-- How does morphology influence tokenization?
-- How do different writing systems influence tokenization?
-- How does tokenization influence embeddings?
-- How does tokenization influence retrieval quality?
-- How does tokenization influence RAG?
-- How should tokenization be evaluated?
-- How should tokenizers support Indigenous and endangered languages?
+Poor tokenization can increase sequence length, fragment meaningful morphemes, and reduce model efficiency.
 
 ---
 
-## Common tokenization algorithms
+# Morphology and tokenization
 
-### Byte Pair Encoding (BPE)
+Morphological complexity is one of the most important factors influencing tokenization.
 
-Byte Pair Encoding (BPE) is a subword tokenization algorithm originally developed for data compression and later adapted for NLP.
+Potential comparisons include:
 
-It begins with individual characters and repeatedly merges the most frequent adjacent pairs until a target vocabulary size is reached.
+- Finnish
+- Estonian
+- Meänkieli
+- North Sámi
+- Turkish
+- Azerbaijani
+- Russian
+- Dutch
 
-BPE is widely used because it balances vocabulary size with the ability to represent previously unseen words.
+Research questions include:
 
-Examples include:
-
-- GPT-2
-- Many GPT-family models
-
-Questions to explore:
-
-- How does vocabulary size influence BPE?
-- How well does BPE support morphologically rich languages?
-
----
-
-### WordPiece
-
-WordPiece was developed by Google and popularized through BERT.
-
-Rather than selecting merges based only on frequency, WordPiece optimizes vocabulary using a likelihood-based objective.
-
-Questions to explore:
-
-- How does WordPiece differ from BPE?
-- Which languages benefit most from WordPiece?
+- Which languages produce the greatest token fragmentation?
+- Which morphological structures are preserved?
+- Which tokenizers best represent productive morphology?
 
 ---
 
-### SentencePiece
+# Writing systems
 
-SentencePiece is a language-independent tokenizer that operates directly on raw text rather than relying on whitespace.
+Writing systems also influence tokenizer behavior.
 
-This makes it particularly useful for multilingual AI systems.
+Potential investigations include:
 
-Questions to explore:
+- Latin alphabet
+- Cyrillic
+- historical orthographies
+- diacritics
+- Unicode normalization
 
-- Why is SentencePiece well suited for multilingual models?
-- How does SentencePiece perform on morphologically rich languages?
+Research questions include:
 
----
-
-### Unigram Language Model
-
-The Unigram Language Model begins with a large vocabulary and removes tokens that contribute least to the probability of the training data.
-
-Unlike BPE, vocabulary optimization is probabilistic rather than greedy.
-
-Questions to explore:
-
-- When does Unigram outperform BPE?
-- Which languages benefit from probabilistic tokenization?
+- How does script influence vocabulary efficiency?
+- How are multilingual vocabularies shared across scripts?
+- How do tokenizers handle orthographic variation?
 
 ---
 
-## Engineering considerations
+# Comparative multilingual analysis
 
-Tokenization decisions influence many downstream AI components.
+Rather than evaluating tokenizers using only aggregate statistics, this repository investigates why tokenization differs across languages.
 
-Important considerations include:
+Potential comparisons include:
 
-- Vocabulary size
-- Token fragmentation
-- Writing systems
-- Morphological complexity
-- Context window utilization
-- Embedding quality
-- Retrieval quality
-- Inference cost
-- Latency
+- Finnish ↔ Estonian
+- Finnish ↔ Russian
+- Dutch ↔ German
+- Russian ↔ Ukrainian
+- Azerbaijani ↔ Turkish
+- North Sámi ↔ Norwegian
 
-Understanding these relationships is essential when designing multilingual AI systems.
+These comparisons explore:
 
----
-
-## Architectural tradeoffs
-
-Modern tokenization systems require balancing competing engineering priorities.
-
-| Tradeoff | Questions to explore |
-|----------|----------------------|
-| Character-level vs subword tokenization | Which approach generalizes better across languages? |
-| BPE vs WordPiece | How do different merge strategies influence multilingual performance? |
-| BPE vs SentencePiece | Which tokenizer performs better across writing systems? |
-| SentencePiece vs Unigram | When does probabilistic vocabulary optimization improve results? |
-| Large vocabulary vs small vocabulary | How does vocabulary size influence efficiency and generalization? |
-| Longer tokens vs shorter tokens | How do token lengths affect context utilization? |
-| Language-specific tokenizers vs multilingual tokenizers | When should a shared tokenizer be preferred? |
-
-Good engineering requires understanding these tradeoffs rather than searching for a universally best tokenizer.
+- language family relationships
+- language contact
+- morphology
+- writing systems
+- vocabulary overlap
+- resource availability
 
 ---
 
-## Engineering implications
+# Tokenization metrics
 
-Tokenization influences every downstream stage of a modern AI system.
+Potential evaluation methods include:
 
-Examples include:
+- average tokens per word
+- token fragmentation
+- vocabulary coverage
+- unknown token frequency
+- sequence length
+- compression ratio
+- tokenizer efficiency
 
-- Embedding quality
-- Semantic similarity
-- Retrieval quality
-- Chunking strategy
-- Context window utilization
-- Hallucination rate
-- Latency
-- Inference cost
-- Evaluation methodology
-
-Poor tokenization decisions propagate throughout the entire AI pipeline.
+These metrics help explain downstream model behavior.
 
 ---
 
-## Comparative case studies
+# Example datasets
 
-| Comparison | Comparison type | Engineering question |
-|------------|----------------|----------------------|
-| Finnish ↔ Russian | Neighboring language families, different scripts | How do morphology and writing systems influence tokenization? |
-| Finnish ↔ Estonian | Closely related languages | Does language relatedness improve tokenization efficiency? |
-| Finnish ↔ Karelian | Low-resource language | Can multilingual tokenizers generalize to low-resource languages? |
-| Finnish ↔ Meänkieli | Language contact | How does lexical similarity influence tokenization? |
-| North Sámi ↔ Norwegian | Indigenous language support | How well do multilingual tokenizers support Indigenous languages? |
-| Russian ↔ Estonian | Language contact | How do tokenizers perform across neighboring language families? |
-| Russian ↔ Latvian | Language contact | How should multilingual tokenizers support multilingual societies? |
-| Russian ↔ Azerbaijani | Regional multilingualism | How do tokenizers perform across different language families? |
-| Persian ↔ Azerbaijani | Cross-border multilingualism | How should multilingual tokenizers handle bilingual communities? |
-| Dutch ↔ German | Closely related languages | How should tokenizers segment compound words? |
-| German ↔ Estonian | Historical language contact | How does language contact influence multilingual tokenization? |
-| Russian ↔ Ukrainian | Closely related Slavic languages | How well do multilingual tokenizers transfer across similar languages? |
-| Turkish ↔ Azerbaijani | Closely related Turkic languages | How does agglutination influence tokenization? |
-| Georgian ↔ Armenian | Neighboring language families | How do writing systems influence tokenization? |
-| Russian ↔ Georgian | Neighboring language families | How do script differences influence multilingual tokenization? |
-| Azerbaijani ↔ Lezgin | Minority language contact | How should multilingual tokenizers support minority languages? |
+Potential datasets include:
+
+- FLORES-200
+- MASSIVE
+- Universal Dependencies
+- OPUS
+- OSCAR
+- Wikipedia
+- Common Crawl
+
+Additional datasets may be incorporated as the repository evolves.
 
 ---
 
-## Future experiments
+# Future experiments
 
-Examples include:
+Potential investigations include:
 
-- Compare BPE, WordPiece, SentencePiece, and Unigram.
-- Measure token counts across language families.
-- Compare tokenization efficiency for morphologically rich languages.
-- Investigate token fragmentation across writing systems.
-- Compare multilingual and language-specific tokenizers.
-- Measure tokenization effects on retrieval quality.
-- Evaluate tokenization strategies for Indigenous languages.
-- Compare tokenizer performance across multilingual benchmarks.
-
----
-
-## Open questions
-
-- Which tokenizer performs best across language families?
-- How should tokenization be evaluated?
-- Which languages remain difficult for current tokenizers?
-- How should multilingual tokenizers support low-resource languages?
-- How should tokenization evolve as context windows become larger?
-- What new tokenization approaches might emerge for future AI systems?
+- Compare BPE and SentencePiece across language families.
+- Measure token fragmentation for morphologically rich languages.
+- Compare tokenizer efficiency across writing systems.
+- Evaluate multilingual tokenizer vocabularies.
+- Compare tokenization for related and unrelated languages.
+- Analyze tokenizer behavior for underrepresented languages.
+- Visualize token boundaries across languages.
+- Build an interactive tokenizer comparison dashboard.
 
 ---
 
-## References
+# Repository connections
 
-(To be added.)
+General concepts:
+
+- `embeddings.md`
+- `retrieval.md`
+- `retrieval-augmented-generation.md`
+- `evaluation.md`
+
+Comparative methodology:
+
+- `comparative-methodology.md`
+- `language-families.md`
+- `language-contact.md`
+- `underrepresented-languages.md`
+
+Language-specific case studies:
+
+See the individual language profiles in `docs/languages/` for language-specific tokenization considerations.
